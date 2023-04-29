@@ -1,7 +1,6 @@
 import './Banner.css';
 
-function Banner () {
-    // JSX como react trabalha com a parte visual
+const Banner = () => {
     return (
         <header className='banner'> 
         <img src="/imagens/banner.png" alt="Banner princiapl do Organo"/>
@@ -10,5 +9,6 @@ function Banner () {
 
     )
 }
+
 
 export default Banner
