@@ -1,18 +1,19 @@
-import './CampoTexto.css';
+import "./Formulario.css";
+import CampoTexto from "../CampoTexto";
 
-// com as {} conseguimos pegar a variavel e inserir o que foi passado pelo props para dentro do nosso html
-const CampoTexto = (props) => {
 
-    const campoModificado = `${props.placeholder}...`
-
+const Formulario = () => {
+  
     return (
-            <div>
-                <label>{props.label}</label> 
-                <input placeholder={campoModificado}></input>
-            </div>
-
- )
+        <section className="container">
+            <form>
+                <h2>Preencha os dados para criar o card do Smite.</h2>
+                <CampoTexto label="Nick" placeholder="Digite seu nick"></CampoTexto>
+                <CampoTexto label="Cargo" placeholder="Digite seu cargo"></CampoTexto>
+                <CampoTexto label="Imagem" placeholder="Digite o endereço da imagem"></CampoTexto>
+            </form>
+        </section>
+    )
 }
 
-
-export default CampoTexto;
+export default Formulario

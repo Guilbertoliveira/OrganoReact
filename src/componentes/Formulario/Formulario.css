@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0px;
+}
+
+.container form {
+    background-color: #F6F6F6;
+    border-radius: 10px;
+    padding: 20px 60px;
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.08);
+    width: 50%;
+
+}
+
+form h2 {
+    font-weight: 400;
+}
