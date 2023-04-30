@@ -6,7 +6,7 @@ const CampoTexto = (props) => {
     const campoModificado = `${props.placeholder}...`
 
     return (
-            <div className='container-campotexto'>
+            <div className='Container-campotexto'>
                 <label>{props.label}</label> 
                 <input placeholder={campoModificado}></input>
             </div>

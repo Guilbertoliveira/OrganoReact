@@ -1,4 +1,4 @@
-.container-campotexto {
+.Container-campotexto {
     margin: 10px 0;
 }
 
@@ -10,7 +10,7 @@ div label {
     font-family: 'Montserrat';
 }
 
-div input, div select {
+div input {
     width: 100%;
     border: none;
     height: 50px;
@@ -18,7 +18,7 @@ div input, div select {
     box-sizing: border-box;
 }
 
-div input::placeholder, div select::placeholder{
-    padding-left: 1%;
+div input::placeholder{
+    padding-left: 5px;
 }
 
