@@ -22,7 +22,7 @@ div input {
 div input::placeholder{
     padding-left: 5px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
+    font-size: 10px;
 
 }
 
