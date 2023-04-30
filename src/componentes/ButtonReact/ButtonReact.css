@@ -1,4 +1,4 @@
-button {
+.Button {
     margin-top: 10px;
     background-color: #e5a802;
     padding: 10px 15px;
@@ -8,4 +8,10 @@ button {
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
+    cursor: pointer;
 }
+
+.Button:hover {
+    color: #191919;
+}
+
