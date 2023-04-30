@@ -9,13 +9,20 @@ const Formulario = () => {
         'Adc','Mid','Solo','Support','Jungle'
     ]
 
+    const aoSalvar = (eventClick) =>{
+        eventClick.preventDefault();
+       console.log(eventClick);
+       
+
+    }
+
     return (
         <section className="container">
-            <form>
+            <form onSubmit={aoSalvar}>
                 <h2>Preencha os dados para criar o card do Smite.</h2>
-                <CampoTexto label="Nick" placeholder="Digite seu nick"></CampoTexto>
-                <CampoTexto label="Cargo" placeholder="Digite seu cargo"></CampoTexto>
-                <CampoTexto label="Imagem" placeholder="Digite o endereço da imagem"></CampoTexto>
+                <CampoTexto obrigatorio={true} label="Nick" placeholder="Digite seu nick"></CampoTexto>
+                <CampoTexto obrigatorio={true} label="Cargo" placeholder="Digite seu cargo"></CampoTexto>
+                <CampoTexto obrigatorio={true} label="Imagem" placeholder="Digite o endereço da imagem"></CampoTexto>
                 <DropDown label="Lane" itens={times}></DropDown>
                 <ButtonReact>Criar Card</ButtonReact>
             </form>
