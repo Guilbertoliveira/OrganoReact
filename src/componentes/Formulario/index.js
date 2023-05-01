@@ -18,12 +18,23 @@ const Formulario = () => {
     const [nome, setNome] = useState('');
     const [cargo, setCargo] = useState('');
     const [imagem, setImagem] = useState('');
+    const [time, setTime] = useState ('');
 
 
 
     const aoSalvar = (eventClick) =>{
         eventClick.preventDefault();
-       console.log('Form foi submetido =>', nome, cargo, imagem);
+        
+        let colaborador = {}
+        colaborador = {
+            "nome": nome,
+            "cargo": cargo,
+            "imagem": imagem,
+            "time": time
+        }
+       console.log('Form foi submetido =>', nome, cargo, imagem, time);
+       console.log(colaborador);
+
        
 
     }
@@ -58,7 +69,9 @@ const Formulario = () => {
                 </CampoTexto>
                 <DropDown 
                     label="Lane" 
-                    itens={times}>
+                    itens={times}
+                    valor={time}
+                    aoAlterado={valor => setTime(valor)}>
                 </DropDown>
                 <ButtonReact>Criar Card</ButtonReact>
             </form>
