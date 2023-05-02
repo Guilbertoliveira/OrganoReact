@@ -9,7 +9,7 @@ import { useState } from "react";
 
 
 
-const Formulario = () => {
+const Formulario = (props) => {
   
     const times = [
         'Adc','Mid','Solo','Support','Jungle'
@@ -26,17 +26,16 @@ const Formulario = () => {
 
     const aoSalvar = (eventClick) =>{
         eventClick.preventDefault();
-        
-        let colaborador = {}
-        colaborador = {
-            "nome": nome,
+    
+          let colaborador = {
+             "nome": nome,
             "cargo": cargo,
-            "imagem": imagem,
-            "time": time,
-            "qualidade": qualidade
-        }
-       console.log('Form foi submetido =>', nome, cargo, imagem, time);
-       console.log(colaborador);
+             "imagem": imagem,
+             "time": time,
+             "qualidade": qualidade
+         }
+         props.aoColaboradorCadastrado(colaborador);
+    //    console.log('Form foi submetido =>', nome, cargo, imagem, time);
 
        
 
@@ -80,13 +79,15 @@ const Formulario = () => {
                     valor={qualidade}
                     obrigatorio={true}
                     aoAlterado= {valorNovo => setQualidade(valorNovo)}
-                    placeholder={'oi'}
+                    placeholder={'Nível do personagem'}
                 ></CampoTexto>
+                
                     
                 <ButtonReact>Criar Card</ButtonReact>
             </form>
         </section>
     )
+
 }
 
 export default Formulario
