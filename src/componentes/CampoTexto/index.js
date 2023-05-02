@@ -8,7 +8,6 @@ const CampoTexto = (props) => {
     
     const campoModificado = `${props.placeholder}...`
     const aoDigitado = (evento) => {
-        console.log(props);
         props.aoAlterado(evento.target.value);
     }
 
