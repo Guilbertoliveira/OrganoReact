@@ -19,6 +19,8 @@ const Formulario = () => {
     const [cargo, setCargo] = useState('');
     const [imagem, setImagem] = useState('');
     const [time, setTime] = useState ('');
+    const [qualidade, setQualidade] = useState ('');
+
 
 
 
@@ -30,7 +32,8 @@ const Formulario = () => {
             "nome": nome,
             "cargo": cargo,
             "imagem": imagem,
-            "time": time
+            "time": time,
+            "qualidade": qualidade
         }
        console.log('Form foi submetido =>', nome, cargo, imagem, time);
        console.log(colaborador);
@@ -49,30 +52,37 @@ const Formulario = () => {
                     label="Nick" 
                     placeholder="Digite seu nick"
                     valor={nome}
-                    aoAlterado={valor => setNome(valor)}
-                    >
-                    
+                    aoAlterado={valorNovo => setNome(valorNovo)}
+                    >      
                 </CampoTexto>
                 <CampoTexto 
                     obrigatorio={true} 
                     label="Cargo" 
                     placeholder="Digite seu cargo"
                     valor={cargo}
-                    aoAlterado={valor => setCargo(valor)}>
+                    aoAlterado={valorNovo => setCargo(valorNovo)}>
                 </CampoTexto>
                 <CampoTexto 
                     obrigatorio={true} 
                     label="Imagem" 
                     placeholder="Digite o endereço da imagem"
                     valor={imagem}
-                    aoAlterado={valor => setImagem(valor)}>
+                    aoAlterado={valorNovo => setImagem(valorNovo)}>
                 </CampoTexto>
                 <DropDown 
                     label="Lane" 
                     itens={times}
                     valor={time}
-                    aoAlterado={valor => setTime(valor)}>
+                    aoAlterado={valorNovo => setTime(valorNovo)}>
                 </DropDown>
+                <CampoTexto //campo criado como teste para aprender :D 
+                    label="Qualidade"
+                    valor={qualidade}
+                    obrigatorio={true}
+                    aoAlterado= {valorNovo => setQualidade(valorNovo)}
+                    placeholder={'oi'}
+                ></CampoTexto>
+                    
                 <ButtonReact>Criar Card</ButtonReact>
             </form>
         </section>
