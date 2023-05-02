@@ -4,25 +4,16 @@ import DropDown from "../DropDown";
 import ButtonReact from "../ButtonReact";
 import { useState } from "react";
 
-
-
-
-
-
 const Formulario = (props) => {
   
     const times = [
         'Adc','Mid','Solo','Support','Jungle'
     ]
-
     const [nome, setNome] = useState('');
     const [cargo, setCargo] = useState('');
     const [imagem, setImagem] = useState('');
     const [time, setTime] = useState ('');
     const [qualidade, setQualidade] = useState ('');
-
-
-
 
     const aoSalvar = (eventClick) =>{
         eventClick.preventDefault();
@@ -37,8 +28,7 @@ const Formulario = (props) => {
          props.aoColaboradorCadastrado(colaborador);
     //    console.log('Form foi submetido =>', nome, cargo, imagem, time);
 
-       
-
+    
     }
 
 
