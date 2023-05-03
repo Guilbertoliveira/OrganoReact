@@ -3,12 +3,13 @@ import CampoTexto from "../CampoTexto";
 import DropDown from "../DropDown";
 import ButtonReact from "../ButtonReact";
 import { useState } from "react";
+import times from "../../Times";
+
 
 const Formulario = (props) => {
   
-    const times = [
-        'Adc','Mid','Solo','Support','Jungle'
-    ]
+   
+
     const [nome, setNome] = useState('');
     const [cargo, setCargo] = useState('');
     const [imagem, setImagem] = useState('');
@@ -60,7 +61,7 @@ const Formulario = (props) => {
                 </CampoTexto>
                 <DropDown 
                     label="Lane" 
-                    itens={times}
+                    itens={times.map((time)=> time.nome)}
                     valor={time}
                     aoAlterado={valorNovo => setTime(valorNovo)}>
                 </DropDown>
