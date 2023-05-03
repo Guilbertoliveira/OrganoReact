@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Banner from './componentes/Banner/Banner'; //maneira importada com caminho completo
 import Formulario from './componentes/Formulario';//maneira importada com index
 import Time from './componentes/Time';
+import times from './Times';
+
 
 
 
@@ -22,9 +24,10 @@ function App() {
     <div className="App">
       <Banner></Banner>
       <Formulario aoColaboradorCadastrado={colaborador => NovoColaborador(colaborador)}></Formulario>
-      <Time nome="Adc"></Time>
-      <Time nome="Support"></Time>
-      <Time nome="Mid"></Time>
+
+      {times.map((time) => {return <Time key={time.nome} nome={time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSecundaria}></Time>})}
+
+      
 
 
     </div>
