@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Banner from './componentes/Banner/Banner'; //maneira importada com caminho completo
 import Formulario from './componentes/Formulario';//maneira importada com index
+import Time from './componentes/Time';
+
 
 
 function App() {
@@ -20,6 +22,11 @@ function App() {
     <div className="App">
       <Banner></Banner>
       <Formulario aoColaboradorCadastrado={colaborador => NovoColaborador(colaborador)}></Formulario>
+      <Time nome="Adc"></Time>
+      <Time nome="Support"></Time>
+      <Time nome="Mid"></Time>
+
+
     </div>
   );
 }
