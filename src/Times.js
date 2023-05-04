@@ -1,11 +1,11 @@
 const times = [
     {
-      nome: 'Adc',
+      nome: 'AD Carry',
       corPrimaria: '#57C278',
       corSecundaria: '#D9F7E9'
     },
     {
-      nome: 'Mid',
+      nome: 'Mid laner',
       corPrimaria: '#82CFFA',
       corSecundaria: '#E8F8FF'
     },
@@ -24,6 +24,6 @@ const times = [
       corPrimaria: '#A6D157',
       corSecundaria: '#F0F8E2'
     }
-  ]
+]
 
   export default times;

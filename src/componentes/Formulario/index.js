@@ -8,8 +8,6 @@ import times from "../../Times";
 
 const Formulario = (props) => {
   
-   
-
     const [nome, setNome] = useState('');
     const [cargo, setCargo] = useState('');
     const [imagem, setImagem] = useState('');
@@ -27,9 +25,7 @@ const Formulario = (props) => {
              "qualidade": qualidade
          }
          props.aoColaboradorCadastrado(colaborador);
-    //    console.log('Form foi submetido =>', nome, cargo, imagem, time);
-
-    
+    //    console.log('Form foi submetido =>', nome, cargo, imagem, time);    
     }
 
 

@@ -1,3 +1,4 @@
+import Card from '../Card';
 import './Time.css';
 
 
@@ -11,6 +12,7 @@ export default function Time (props) {
         <section className='time' style={estiliza}>
             <div>
                 <h3 style={{borderColor: props.corPrimaria}}>{props.nome}</h3>
+                <Card></Card>
 
             </div>
         </section>

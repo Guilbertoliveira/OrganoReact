@@ -4,13 +4,9 @@ import Formulario from './componentes/Formulario';//maneira importada com index
 import Time from './componentes/Time';
 import times from './Times';
 
-
-
-
 function App() {
 
-  const [colaboradores, setColaboradores] = useState([]);
-
+  const [colaboradores] = useState([]);
   const NovoColaborador = (colaborador) => {
     
     //testei o push e deu certo colaboradores.push(colaborador)
@@ -26,9 +22,6 @@ function App() {
       <Formulario aoColaboradorCadastrado={colaborador => NovoColaborador(colaborador)}></Formulario>
 
       {times.map((time) => {return <Time key={time.nome} nome={time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSecundaria}></Time>})}
-
-      
-
 
     </div>
   );

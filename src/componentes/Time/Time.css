@@ -1,6 +1,6 @@
 .time {
     text-align: center;
-    padding: 20px;
+    padding: 20px 4vw;
 }
 
 .time h3 {
@@ -8,4 +8,6 @@
     border-bottom: 4px solid ;
     padding-bottom: 8px;
     display: inline-block;
+    font-family: 'Prata', serif;
+    font-weight: 400;
 }
