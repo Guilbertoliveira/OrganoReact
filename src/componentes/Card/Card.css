@@ -1,0 +1,49 @@
+.card {
+    display: block;
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    border-radius: 30px;
+}
+
+.card .topo {
+    background-color: green;
+    height: 35%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+
+}
+
+.card img {
+    width: 150px;
+    position: relative;
+    border-radius: 80px;
+    top: 20px;
+}
+
+.rodape {
+    background-color: #FFFFFF;
+    padding-top: 30%;
+    border-radius: 30%;
+}
+
+
+
+.rodape h4 {
+    color: #6278F7;
+    margin: 0px;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;;
+}
+
+.rodape h5 {
+    margin: 0px; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+
+
+
