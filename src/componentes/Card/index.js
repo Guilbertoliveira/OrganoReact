@@ -1,15 +1,16 @@
 import './Card.css';
 
-const Card = () => {
+const Card = ({nome, imagem, cargo}) => {
+    
     
     return (
         <div className='card'>
             <div className='topo'>
-                <img src='https://github.com/Guilbertoliveira.png' alt='Foto github'></img>
+                <img src={imagem} alt={nome} ></img>
             </div>
             <div className='rodape'>
-                <h4>relaxa </h4>
-                <h5>ai</h5>
+                <h4>{nome} </h4>
+                <h5>{cargo}</h5>
             </div>
         </div>
     )

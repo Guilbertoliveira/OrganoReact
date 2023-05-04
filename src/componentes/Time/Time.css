@@ -1,6 +1,14 @@
 .time {
     text-align: center;
     padding: 20px 4vw;
+
+}
+
+.cards {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .time h3 {
