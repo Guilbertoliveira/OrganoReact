@@ -2,10 +2,15 @@
     display: flex;
     justify-content: center;
     margin: 50px 0px;
+    background-image: url('../../../public/imagens/514644.jpg');
+    background-size: contain;
+    background-repeat: unset;
+
 }
 
 .container form {
     background-color: #F6F6F6;
+    opacity: 90%;
     border-radius: 10px;
     padding: 20px 60px;
     box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.08);
@@ -14,7 +19,9 @@
 }
 
 form h2 {
+    text-align: center;
     font-weight: 400;
     font-family: 'Montserrat', sans-serif;
 
 }
+
