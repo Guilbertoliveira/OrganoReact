@@ -6,12 +6,12 @@ import times from './Times';
 
 function App() {
 
-  const [colaboradores] = useState([]);
+  const [colaboradores, setColaboradores] = useState([]);
   const NovoColaborador = (colaborador) => {
     
     //testei o push e deu certo colaboradores.push(colaborador)
-    //setColaboradores([...colaboradores, colaborador]);
-    colaboradores.push(colaborador);
+    setColaboradores([...colaboradores, colaborador]);
+    //colaboradores.push(colaborador);
     console.log(colaboradores);
 
   }
@@ -21,7 +21,14 @@ function App() {
       <Banner></Banner>
       <Formulario aoColaboradorCadastrado={colaborador => NovoColaborador(colaborador)}></Formulario>
 
-      {times.map((time) => {return <Time key={time.nome} nome={time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSecundaria}></Time>})}
+      {times.map((time) => {return <Time 
+          key={time.nome} 
+          nome={time.nome} 
+          corPrimaria={time.corPrimaria} 
+          corSecundaria={time.corSecundaria}
+          colaboradores={colaboradores.filter( colaborador => colaborador.time == time.nome)}>
+          
+      </Time>})}
 
     </div>
   );
