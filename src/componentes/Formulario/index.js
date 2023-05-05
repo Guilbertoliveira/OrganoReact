@@ -14,9 +14,10 @@ const Formulario = (props) => {
     const [time, setTime] = useState ('');
     const [qualidade, setQualidade] = useState ('');
 
+
     const aoSalvar = (eventClick) =>{
         eventClick.preventDefault();
-    
+        
           let colaborador = {
              "nome": nome,
             "cargo": cargo,
@@ -25,7 +26,14 @@ const Formulario = (props) => {
              "qualidade": qualidade
          }
          props.aoColaboradorCadastrado(colaborador);
-    //    console.log('Form foi submetido =>', nome, cargo, imagem, time);    
+
+    //    console.log('Form foi submetido =>', nome, cargo, imagem, time);   
+    
+         setNome(""); 
+         setImagem("");
+         setCargo("");
+         setTime("");
+         setQualidade("");
     }
 
 
