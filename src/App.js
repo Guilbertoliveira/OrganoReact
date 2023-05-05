@@ -6,13 +6,33 @@ import times from './Times';
 
 function App() {
 
+
+  function validaNome(colaborador, colaboradores){
+      if(colaboradores.filter((nick) => nick.nome === colaborador.nome).length > 0){
+        return false;
+      }
+      else {
+        return true;
+      }
+  }
+
+
+
+  
+
   const [colaboradores, setColaboradores] = useState([]);
   const NovoColaborador = (colaborador) => {
-    
-    //testei o push e deu certo colaboradores.push(colaborador)
-    setColaboradores([...colaboradores, colaborador]);
-    //colaboradores.push(colaborador);
-    console.log(colaboradores);
+    if (validaNome(colaborador, colaboradores)){
+       //testei o push e deu certo colaboradores.push(colaborador)
+      setColaboradores([...colaboradores, colaborador]);
+      //colaboradores.push(colaborador);
+     console.log(colaboradores);
+    }
+    else {
+      alert('usuario ja existente');
+      console.log(colaboradores);
+    }
+   
 
   }
 
@@ -26,7 +46,7 @@ function App() {
           nome={time.nome} 
           corPrimaria={time.corPrimaria} 
           corSecundaria={time.corSecundaria}
-          colaboradores={colaboradores.filter( colaborador => colaborador.time == time.nome)}>
+          colaboradores={colaboradores.filter( colaborador => colaborador.time === time.nome)}>
           
       </Time>})}
 
