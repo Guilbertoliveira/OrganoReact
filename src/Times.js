@@ -6,7 +6,7 @@ const times = [
     },
     {
       nome: 'Mid laner',
-      corPrimaria: '#A78E12',
+      corPrimaria: '#F5D464',
       corSecundaria: '#191919'
     },
     {

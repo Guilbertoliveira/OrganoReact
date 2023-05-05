@@ -6,6 +6,8 @@
     background-size: contain;
     background-repeat: unset;
 
+    
+
 }
 
 .container form {
@@ -22,6 +24,42 @@ form h2 {
     text-align: center;
     font-weight: 400;
     font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
 
 }
+
+
+.container form {
+    --border-size: 4px;
+    --border-angle: 0turn;
+    
+    background-image: conic-gradient(
+        from var(--border-angle),
+        #213,
+        #112 50%,
+        #213
+      ),
+      conic-gradient(from var(--border-angle), transparent 20%, rgb(226, 18, 35), rgb(228, 225, 18));
+    background-size: calc(100% - (var(--border-size) * 2))
+        calc(100% - (var(--border-size) * 2)),
+      cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  
+    animation: bg-spin 3s linear infinite;
+ 
+   
+  }
+  
+  @property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+  }
+  
+  @keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
+    }
+  }
 
