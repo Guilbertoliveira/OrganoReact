@@ -18,7 +18,7 @@ function App() {
 
 
 
-  
+
 
   const [colaboradores, setColaboradores] = useState([]);
   const NovoColaborador = (colaborador) => {
@@ -26,17 +26,18 @@ function App() {
        //testei o push e deu certo colaboradores.push(colaborador)
       setColaboradores([...colaboradores, colaborador]);
       //colaboradores.push(colaborador);
-     console.log(colaboradores);
     }
     else {
       alert('usuario ja existente');
-      console.log(colaboradores);
     }
    
 
   }
 
+
+
   return (
+
     <div className="App">
       <Banner></Banner>
       <Formulario aoColaboradorCadastrado={colaborador => NovoColaborador(colaborador)}></Formulario>

@@ -12,19 +12,22 @@ const Formulario = (props) => {
     const [cargo, setCargo] = useState('');
     const [imagem, setImagem] = useState('');
     const [time, setTime] = useState ('');
-    const [qualidade, setQualidade] = useState ('');
+    const [dificuldade, setDificuldade] = useState ('');
 
 
     const aoSalvar = (eventClick) =>{
         eventClick.preventDefault();
         
+
           let colaborador = {
              "nome": nome,
             "cargo": cargo,
              "imagem": imagem,
              "time": time,
-             "qualidade": qualidade
+             "dificuldade": dificuldade
          }
+
+
          props.aoColaboradorCadastrado(colaborador);
 
     //    console.log('Form foi submetido =>', nome, cargo, imagem, time);   
@@ -33,7 +36,7 @@ const Formulario = (props) => {
          setImagem("");
          setCargo("");
          setTime("");
-         setQualidade("");
+         setDificuldade("");
     }
 
 
@@ -67,14 +70,15 @@ const Formulario = (props) => {
                     label="Lane" 
                     itens={times.map((time)=> time.nome)}
                     valor={time}
-                    aoAlterado={valorNovo => setTime(valorNovo)}>
+                    aoAlterado={valorNovo => setTime(valorNovo)}
+                    required={true}>
                 </DropDown>
                 <CampoTexto //campo criado como teste para aprender :D 
-                    label="Qualidade"
-                    valor={qualidade}
+                    label="Dificuldade"
+                    valor={dificuldade}
                     obrigatorio={true}
-                    aoAlterado= {valorNovo => setQualidade(valorNovo)}
-                    placeholder={'Nível do personagem'}
+                    aoAlterado= {valorNovo => setDificuldade(valorNovo)}
+                    placeholder={'Dificuldade do personagem'}
                 ></CampoTexto>
                 
                     

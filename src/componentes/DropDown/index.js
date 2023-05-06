@@ -3,7 +3,6 @@ import './DropDown.css';
 
 const DropDown = (props) =>{
 
-
     return (
         <div className='Lista-suspensa'>
             <label>{props.label}</label>
