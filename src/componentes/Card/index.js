@@ -1,11 +1,12 @@
 import './Card.css';
 
-const Card = ({nome, imagem, cargo, corPrimaria, dificuldade}) => {
+const Card = ({nome, imagem, cargo, corPrimaria, dificuldade, aoDeletar}) => {
     
 
     return (
-      
+            
                 <div className='card gradient-border'>
+                    <div className='deletar' onClick={aoDeletar}>Deletar</div>
                     <div className='topo' style={{backgroundColor: corPrimaria}}>
                         <img src={imagem} alt={nome}></img>
                     </div>
@@ -15,7 +16,7 @@ const Card = ({nome, imagem, cargo, corPrimaria, dificuldade}) => {
                         <h6>{dificuldade}</h6>
                     </div>
                 </div>
-        
+            
     )
 }
 

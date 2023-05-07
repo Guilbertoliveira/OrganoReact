@@ -78,6 +78,13 @@
     }
   }
 
+.deletar {
+  position: absolute;
+  right: -5px;
+  top: -25px;
+  color: white;
+}
+
 
 
   

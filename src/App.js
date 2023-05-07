@@ -34,7 +34,9 @@ function App() {
 
   }
 
-
+  function deletarColaborador (){
+    console.log('deletando colab');
+  }
 
   return (
 
@@ -43,13 +45,14 @@ function App() {
       <Formulario aoColaboradorCadastrado={colaborador => NovoColaborador(colaborador)}></Formulario>
 
       {times.map((time) => {return <Time 
-          key={time.nome} 
-          nome={time.nome} 
-          corPrimaria={time.corPrimaria} 
-          corSecundaria={time.corSecundaria}
-          colaboradores={colaboradores.filter( colaborador => colaborador.time === time.nome)}>
-          
-      </Time>})}
+            key={time.nome} 
+            nome={time.nome} 
+            corPrimaria={time.corPrimaria} 
+            corSecundaria={time.corSecundaria}
+            colaboradores={colaboradores.filter( colaborador => colaborador.time === time.nome)}
+            aoDeletar={deletarColaborador}>
+            
+        </Time>})}
 
     </div>
   );
