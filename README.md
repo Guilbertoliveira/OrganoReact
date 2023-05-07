@@ -13,8 +13,10 @@
 <p>This project served as a basis to improve my knowledge in react, some improvements were made by me.</p>
 
 <h2>Version Mobile</h2>
+<img src="https://user-images.githubusercontent.com/41201436/236690559-c1c5029c-6eec-4e44-90b8-060aa87bc42e.gif" width="300" height="450" title="Version mobile" />
 
 <h2>Version Desktop</h2>
+<img src="https://user-images.githubusercontent.com/41201436/236690504-b5a9e32c-f2d2-4176-8195-ac90121aff75.gif" width="750" height="450" title="Version desktop"/>
 
 <h2>Technologies used</h2>
 <div>
