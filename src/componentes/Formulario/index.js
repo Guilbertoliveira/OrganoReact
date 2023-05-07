@@ -70,8 +70,7 @@ const Formulario = (props) => {
                     label="Lane" 
                     itens={times.map((time)=> time.nome)}
                     valor={time}
-                    aoAlterado={valorNovo => setTime(valorNovo)}
-                    required={true}>
+                    aoAlterado={valorNovo => setTime(valorNovo)}>
                 </DropDown>
                 <CampoTexto //campo criado como teste para aprender :D 
                     label="Dificuldade"

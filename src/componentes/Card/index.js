@@ -5,7 +5,7 @@ const Card = ({nome, imagem, cargo, corPrimaria, dificuldade}) => {
 
     return (
       
-                <div className='card'>
+                <div className='card gradient-border'>
                     <div className='topo' style={{backgroundColor: corPrimaria}}>
                         <img src={imagem} alt={nome}></img>
                     </div>

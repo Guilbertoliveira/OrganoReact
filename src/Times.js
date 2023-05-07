@@ -1,27 +1,32 @@
 const times = [
     {
-      nome: 'AD Carry',
-      corPrimaria: '#BDB10B',
+      nome: ' ',
+      corPrimaria: '#',
+      corSecundaria: '#'
+    },
+    {
+      nome: 'Adc',
+      corPrimaria: '#262A56',
       corSecundaria: '#191919'
     },
     {
       nome: 'Mid laner',
-      corPrimaria: '#F5D464',
+      corPrimaria: '#66347F',
       corSecundaria: '#191919'
     },
     {
       nome: 'Solo',
-      corPrimaria: '#BD8D0B',
+      corPrimaria: '#3E54AC',
       corSecundaria: '#191919'
     },
     {
       nome: 'Support',
-      corPrimaria: '#B35D08',
+      corPrimaria: '#EB455F',
       corSecundaria: '#191919'
     },
     {
       nome: 'Jungle',
-      corPrimaria: '#A6D157',
+      corPrimaria: '#FB2576',
       corSecundaria: '#191919'
     }
 ]
