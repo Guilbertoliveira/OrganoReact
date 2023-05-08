@@ -49,6 +49,11 @@
     font-size: 18px;
 }
 
+.rodape h6 {
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  margin-block-end: auto;
+}
 
 
 .gradient-border {
