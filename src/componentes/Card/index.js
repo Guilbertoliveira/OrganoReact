@@ -1,4 +1,5 @@
 import './Card.css';
+import { HiOutlineTrash } from 'react-icons/hi';
 
 const Card = ({nome, imagem, cargo, corPrimaria, dificuldade, aoDeletar}) => {
     
@@ -6,7 +7,7 @@ const Card = ({nome, imagem, cargo, corPrimaria, dificuldade, aoDeletar}) => {
     return (
             
                 <div className='card gradient-border'>
-                    <div className='deletar' onClick={aoDeletar}>Deletar</div>
+                    <HiOutlineTrash size={21} className='deletar' color={corPrimaria} onClick={aoDeletar}></HiOutlineTrash>
                     <div className='topo' style={{backgroundColor: corPrimaria}}>
                         <img src={imagem} alt={nome}></img>
                     </div>
