@@ -10,6 +10,7 @@ export default function Time (props) {
 
     return (
         props.colaboradores.length > 0 &&<section className='time' style={estiliza} >
+            <input value={props.corSecundaria} type='color' className='input-cor'></input>
             <div>
                 <h3 style={{borderColor: props.corPrimaria, color: props.corPrimaria}}>{props.nome}</h3>
                 <div className='cards'>

@@ -1,7 +1,7 @@
 .time {
     text-align: center;
     padding: 20px 4vw;
-
+    position: relative;
 
 }
 
@@ -19,4 +19,12 @@
     display: inline-block;
     font-family: 'Prata', serif;
     font-weight: 400;
+}
+
+.input-cor {
+    width: 35px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+
 }
