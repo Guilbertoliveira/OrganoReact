@@ -17,8 +17,8 @@
 }
 
 .card img {
-    width: 150px;
-    max-height: 135px;
+    width: 125px;
+    height: 125px;
     position: relative;
     border-radius: 80px;
     top: 20px;
