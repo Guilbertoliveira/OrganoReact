@@ -71,7 +71,8 @@ function App() {
     console.log('deletando colab');
   }
 
-  function mudarCorDoTime(cor, nome){
+  function mudarCorDoTime(cor, nome, teste){
+    console.log(teste);
     setTimes(times.map(time => {
       if(time.nome === nome){
         time.corPrimaria = cor;
