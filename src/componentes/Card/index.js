@@ -4,6 +4,8 @@ import { HiOutlineTrash } from 'react-icons/hi';
 const Card = ({nome, imagem, cargo, corPrimaria, dificuldade, aoDeletar}) => {
     
 
+    
+
     return (
             
                 <div className='card gradient-border'>

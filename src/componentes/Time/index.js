@@ -7,10 +7,12 @@ export default function Time (props) {
         backgroundColor: props.corSecundaria
     }
 
-
+    
     return (
         props.colaboradores.length > 0 &&<section className='time' style={estiliza} >
             <input value={props.corPrimaria} type='color' className='input-cor' onChange={(evento) => props.mudarCor(evento.target.value, props.time.nome)}></input>
+            <input value={props.corSecundaria} type='color' className='input-cor2' onChange={(evento) => props.mudarCor(evento.target.value, props.time.nome, "alo")}></input>
+
             <div>
                 <h3 style={{borderColor: props.corPrimaria, color: props.corPrimaria}}>{props.nome}</h3>
                 <div className='cards'>
