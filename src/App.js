@@ -71,11 +71,14 @@ function App() {
     console.log('deletando colab');
   }
 
-  function mudarCorDoTime(cor, nome, teste){
-    console.log(teste);
+  function mudarCorDoTime(cor, nome, campo){
+
     setTimes(times.map(time => {
       if(time.nome === nome){
-        time.corPrimaria = cor;
+        if(campo === "corPrimaria") 
+          {time.corPrimaria = cor;} 
+        else if (campo === "corSecundaria")
+          {time.corSecundaria = cor};
       } return time;
     }))
   }

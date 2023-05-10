@@ -10,8 +10,8 @@ export default function Time (props) {
     
     return (
         props.colaboradores.length > 0 &&<section className='time' style={estiliza} >
-            <input value={props.corPrimaria} type='color' className='input-cor' onChange={(evento) => props.mudarCor(evento.target.value, props.time.nome)}></input>
-            <input value={props.corSecundaria} type='color' className='input-cor2' onChange={(evento) => props.mudarCor(evento.target.value, props.time.nome, "alo")}></input>
+            <input value={props.corPrimaria} type='color' className='input-cor' onChange={(evento) => props.mudarCor(evento.target.value, props.time.nome, "corPrimaria")}></input>
+            <input value={props.corSecundaria} type='color' className='input-cor2' onChange={(evento) => props.mudarCor(evento.target.value, props.time.nome, "corSecundaria")}></input>
 
             <div>
                 <h3 style={{borderColor: props.corPrimaria, color: props.corPrimaria}}>{props.nome}</h3>
