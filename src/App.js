@@ -2,37 +2,44 @@ import { useState } from 'react';
 import Banner from './componentes/Banner/Banner'; //maneira importada com caminho completo
 import Formulario from './componentes/Formulario';//maneira importada com index
 import Time from './componentes/Time';
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
 
 
   const [times, setTimes] = useState ([
     {
+      id: uuidv4(),
       nome: ' ',
       corPrimaria: '#',
       corSecundaria: '#'
     },
     {
+      id: uuidv4(),
       nome: 'Adc',
       corPrimaria: '#262A56',
       corSecundaria: '#191919'
     },
     {
+      id: uuidv4(),
       nome: 'Mid laner',
       corPrimaria: '#66347F',
       corSecundaria: '#191919'
     },
     {
+      id: uuidv4(),
       nome: 'Solo',
       corPrimaria: '#3E54AC',
       corSecundaria: '#191919'
     },
     {
+      id: uuidv4(),
       nome: 'Support',
       corPrimaria: '#EB455F',
       corSecundaria: '#191919'
     },
     {
+      id: uuidv4(),
       nome: 'Jungle',
       corPrimaria: '#FB2576',
       corSecundaria: '#191919'
@@ -55,6 +62,7 @@ function App() {
 
   const [colaboradores, setColaboradores] = useState([]);
   const NovoColaborador = (colaborador) => {
+    console.log(colaborador);
     if (validaNome(colaborador, colaboradores)){
        //testei o push e deu certo colaboradores.push(colaborador)
       setColaboradores([...colaboradores, colaborador]);
@@ -71,10 +79,10 @@ function App() {
     console.log('deletando colab');
   }
 
-  function mudarCorDoTime(cor, nome, campo){
+  function mudarCorDoTime(cor, id, campo){
 
     setTimes(times.map(time => {
-      if(time.nome === nome){
+      if(time.id === id){
         if(campo === "corPrimaria") 
           {time.corPrimaria = cor;} 
         else if (campo === "corSecundaria")
