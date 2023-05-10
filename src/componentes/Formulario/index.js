@@ -3,6 +3,7 @@ import CampoTexto from "../CampoTexto";
 import DropDown from "../DropDown";
 import ButtonReact from "../ButtonReact";
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 
 const Formulario = (props) => {
@@ -20,10 +21,11 @@ const Formulario = (props) => {
 
           let colaborador = {
              "nome": nome,
-            "cargo": cargo,
+             "cargo": cargo,
              "imagem": imagem,
              "time": time,
-             "dificuldade": dificuldade
+             "dificuldade": dificuldade,
+             "id": uuidv4()
          }
 
 
