@@ -13,6 +13,8 @@ const Formulario = (props) => {
     const [imagem, setImagem] = useState('');
     const [time, setTime] = useState ('');
     const [dificuldade, setDificuldade] = useState ('');
+    const [nomeTime, setNomeTime] = useState ('');
+    const [corTime, setCorTime] = useState ('');
 
 
     function validaImagem(imagemvalidada){
@@ -66,7 +68,7 @@ const Formulario = (props) => {
 
     return (
         <section className="container">
-            <form onSubmit={aoSalvar}>
+            <form onSubmit={aoSalvar} className="firstForm">
                 <h2>Preencha os dados para criar o card do Smite.</h2>
                 <CampoTexto
                     obrigatorio={true} 
@@ -106,6 +108,32 @@ const Formulario = (props) => {
                 
                     
                 <ButtonReact>Criar Card</ButtonReact>
+            </form>
+            <form className="secondForm" onSubmit={(evento)=> {
+                evento.preventDefault();
+                props.cadastrarTime({"nome": nomeTime, "cor": corTime});
+                setCorTime("") 
+                setNomeTime("")
+
+            }}>
+                <h2>Preencha os dados para criar novo time.</h2>
+                <CampoTexto
+                    obrigatorio
+                    label="Nick" 
+                    placeholder="Digite nome do time"
+                    valor={nomeTime}
+                    aoAlterado={valorNovo => setNomeTime(valorNovo)}
+                >      
+                </CampoTexto>
+                <CampoTexto 
+                    obrigatorio
+                    label="Cargo" 
+                    placeholder="Digite a cor do time"
+                    valor={corTime}
+                    aoAlterado={valorNovo => setCorTime(valorNovo)}
+                >
+                </CampoTexto>                        
+                <ButtonReact>Criar novo time</ButtonReact>
             </form>
         </section>
     )
