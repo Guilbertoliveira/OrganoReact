@@ -95,14 +95,20 @@ function App() {
     }))
   }
 
- 
+ function cadastrarTime (novoTime){
+  setTimes([...times, {...novoTime, id: uuidv4}]);
+ }
 
 
   return (
 
     <div className="App">
       <Banner></Banner>
-      <Formulario aoColaboradorCadastrado={colaborador => NovoColaborador(colaborador)} Times={times}></Formulario>
+      <Formulario 
+        cadastrarTime={cadastrarTime}
+        aoColaboradorCadastrado={colaborador => NovoColaborador(colaborador)} 
+        Times={times}>
+      </Formulario>
 
       {times.map((time) => {return <Time 
             mudarCor={mudarCorDoTime}
