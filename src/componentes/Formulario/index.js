@@ -15,21 +15,44 @@ const Formulario = (props) => {
     const [dificuldade, setDificuldade] = useState ('');
 
 
+    function validaImagem(imagemvalidada){
+        var img = document.createElement('img');
+        img.src = imagemvalidada;
+      
+        img.onerror = function() {
+            let colaboradorcomerro = {
+                "nome": nome,
+                "cargo": cargo,
+                "imagem": 'https://t4.ftcdn.net/jpg/00/64/67/27/360_F_64672736_U5kpdGs9keUll8CRQ3p3YaEv2M6qkVY5.jpg',
+                "time": time,
+                "dificuldade": dificuldade,
+                "id": uuidv4()
+            }
+   
+            props.aoColaboradorCadastrado(colaboradorcomerro);
+        }
+        img.onload = function() {
+            let colaborador = {
+                "nome": nome,
+                "cargo": cargo,
+                "imagem": imagem,
+                "time": time,
+                "dificuldade": dificuldade,
+                "id": uuidv4()
+            }
+   
+            props.aoColaboradorCadastrado(colaborador);
+          }
+      
+      }
+
+
     const aoSalvar = (eventClick) =>{
         eventClick.preventDefault();
         
+        validaImagem(imagem)
 
-          let colaborador = {
-             "nome": nome,
-             "cargo": cargo,
-             "imagem": imagem,
-             "time": time,
-             "dificuldade": dificuldade,
-             "id": uuidv4()
-         }
-
-
-         props.aoColaboradorCadastrado(colaborador);
+       
 
     //    console.log('Form foi submetido =>', nome, cargo, imagem, time);   
     
