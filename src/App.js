@@ -3,6 +3,7 @@ import Banner from './componentes/Banner/Banner'; //maneira importada com caminh
 import Formulario from './componentes/Formulario';//maneira importada com index
 import Time from './componentes/Time';
 import { v4 as uuidv4 } from 'uuid';
+import chalk from 'chalk';
 
 function App() {
 
@@ -62,21 +63,24 @@ function App() {
 
   const [colaboradores, setColaboradores] = useState([]);
   const NovoColaborador = (colaborador) => {
-    console.log(colaborador);
+    
     if (validaNome(colaborador, colaboradores)){
        //testei o push e deu certo colaboradores.push(colaborador)
+       console.log(chalk.green('usuario inserido'));
       setColaboradores([...colaboradores, colaborador]);
       //colaboradores.push(colaborador);
     }
     else {
       alert('usuario ja existente');
+      console.log(chalk.red('O nome ja existe'))
     }
    
 
   }
 
-  function deletarColaborador (){
-    console.log('deletando colab');
+  function deletarColaborador (id){
+    setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id));
+    console.log(chalk.green('Deletado o card'));
   }
 
   function mudarCorDoTime(cor, id, campo){
@@ -90,6 +94,9 @@ function App() {
       } return time;
     }))
   }
+
+ 
+
 
   return (
 
@@ -105,7 +112,8 @@ function App() {
             corSecundaria={time.corSecundaria}
             colaboradores={colaboradores.filter( colaborador => colaborador.time === time.nome)}
             aoDeletar={deletarColaborador}
-            time = {time}>
+            time = {time}
+            >
             
         </Time>})}
 

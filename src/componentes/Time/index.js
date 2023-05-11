@@ -7,6 +7,7 @@ export default function Time (props) {
         backgroundColor: props.corSecundaria
     }
 
+
     
     return (
         props.colaboradores.length > 0 &&<section className='time' style={estiliza} >
@@ -25,6 +26,8 @@ export default function Time (props) {
                         corPrimaria={props.corPrimaria} 
                         dificuldade={colaborador.dificuldade} 
                         aoDeletar={props.aoDeletar}
+                        id={colaborador.id}
+                        
                     >
                     </Card>})}
           
