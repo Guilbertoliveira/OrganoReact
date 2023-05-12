@@ -9,7 +9,6 @@
 }
 
 .card .topo {
-    background-color: green;
     height: 34%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -26,13 +25,15 @@
 
 .rodape {
     background-color: #FFFFFF;
-    padding-top: 35%;
+    padding-top: 25%;
     border-radius: 0px 0px 10px 10px;
+    height: 122px;
 }
 
 
 
 .rodape h4 {
+    font-style: italic;
     color: #6278F7;
     margin: 0px;
     font-size: 24px;
@@ -53,6 +54,7 @@
   font-family: 'Montserrat', sans-serif;
   display: inline-block;
   margin-block-end: auto;
+  margin-top: 0px;
 }
 
 
@@ -88,6 +90,12 @@
   right: -5px;
   top: -25px;
   color: white;
+}
+
+.favoritar {
+  position: relative;
+  top: -130px;
+  left: 3px;
 }
 
 

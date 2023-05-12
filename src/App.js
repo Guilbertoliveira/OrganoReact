@@ -99,6 +99,13 @@ function App() {
   setTimes([...times, {...novoTime, id: uuidv4}]);
  }
 
+ function resolverFavorito(id){
+  setColaboradores(colaboradores.map((colaborador) => {
+    if(colaborador.id === id) colaborador.favorito = !colaborador.favorito;
+    return colaborador
+  }))
+ }
+
 
   return (
 
@@ -111,6 +118,7 @@ function App() {
       </Formulario>
 
       {times.map((time) => {return <Time 
+            aoFavoritar={resolverFavorito}
             mudarCor={mudarCorDoTime}
             key={time.nome} 
             nome={time.nome} 
