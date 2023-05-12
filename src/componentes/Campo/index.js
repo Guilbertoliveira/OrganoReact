@@ -1,7 +1,7 @@
-import './CampoTexto.css'; 
+import './Campo.css'; 
 
 // com as {} conseguimos pegar a variavel e inserir o que foi passado pelo props para dentro do nosso html
-const CampoTexto = (props) => {
+const Campo = (props) => {
 
     // let valor = '';
 
@@ -14,9 +14,9 @@ const CampoTexto = (props) => {
 
 
     return (
-            <div className='Container-campotexto'>
+            <div className='Container-campo'>
                 <label>{props.label}</label> 
-                <input value={props.valor} 
+                <input type={props.type} value={props.valor} 
                     onChange={aoDigitado}
                     required={props.obrigatorio} 
                     placeholder={campoModificado}
@@ -28,4 +28,4 @@ const CampoTexto = (props) => {
 }
 
 
-export default CampoTexto;
+export default Campo;
