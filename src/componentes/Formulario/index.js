@@ -1,5 +1,5 @@
 import "./Formulario.css";
-import CampoTexto from "../CampoTexto";
+import Campo from "../Campo";
 import DropDown from "../DropDown";
 import ButtonReact from "../ButtonReact";
 import { useState } from "react";
@@ -70,69 +70,78 @@ const Formulario = (props) => {
         <section className="container">
             <form onSubmit={aoSalvar} className="firstForm">
                 <h2>Preencha os dados para criar o card do Smite.</h2>
-                <CampoTexto
+                <Campo
                     obrigatorio={true} 
                     label="Nick" 
                     placeholder="Digite seu nick"
                     valor={nome}
                     aoAlterado={valorNovo => setNome(valorNovo)}
+                    type='text'
                     >      
-                </CampoTexto>
-                <CampoTexto 
+                </Campo>
+                <Campo 
                     obrigatorio={true} 
                     label="Cargo" 
                     placeholder="Digite seu cargo"
                     valor={cargo}
-                    aoAlterado={valorNovo => setCargo(valorNovo)}>
-                </CampoTexto>
-                <CampoTexto 
+                    aoAlterado={valorNovo => setCargo(valorNovo)}
+                    type='text'
+                    >
+                </Campo>
+                <Campo 
                     obrigatorio={true} 
                     label="Imagem" 
                     placeholder="Digite o endereço da imagem"
                     valor={imagem}
-                    aoAlterado={valorNovo => setImagem(valorNovo)}>
-                </CampoTexto>
+                    aoAlterado={valorNovo => setImagem(valorNovo)}
+                    type='text'
+                    >
+                </Campo>
                 <DropDown 
                     label="Lane" 
                     itens={props.Times.map((time)=> time.nome)}
                     valor={time}
                     aoAlterado={valorNovo => setTime(valorNovo)}>
                 </DropDown>
-                <CampoTexto //campo criado como teste para aprender :D 
+                <Campo //campo criado como teste para aprender :D 
                     label="Dificuldade"
                     valor={dificuldade}
                     obrigatorio={true}
                     aoAlterado= {valorNovo => setDificuldade(valorNovo)}
                     placeholder={'Dificuldade do personagem'}
-                ></CampoTexto>
+                    type='text'
+
+                ></Campo>
                 
                     
                 <ButtonReact>Criar Card</ButtonReact>
             </form>
             <form className="secondForm" onSubmit={(evento)=> {
                 evento.preventDefault();
-                props.cadastrarTime({"nome": nomeTime, "cor": corTime});
+                props.cadastrarTime({nome: nomeTime, cor: corTime});
                 setCorTime("") 
                 setNomeTime("")
 
             }}>
                 <h2>Preencha os dados para criar novo time.</h2>
-                <CampoTexto
+                <Campo
                     obrigatorio
                     label="Nick" 
                     placeholder="Digite nome do time"
                     valor={nomeTime}
                     aoAlterado={valorNovo => setNomeTime(valorNovo)}
+                    type='text'
                 >      
-                </CampoTexto>
-                <CampoTexto 
+                </Campo>
+                <Campo 
                     obrigatorio
-                    label="Cargo" 
+                    type='color'
+                    label="Cor" 
                     placeholder="Digite a cor do time"
                     valor={corTime}
                     aoAlterado={valorNovo => setCorTime(valorNovo)}
                 >
-                </CampoTexto>                        
+                </Campo>                        
                 <ButtonReact>Criar novo time</ButtonReact>
             </form>
         </section>
