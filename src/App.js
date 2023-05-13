@@ -107,6 +107,12 @@ function App() {
  }
 
 
+ function filtrarCard(estado){
+  setColaboradores(colaboradores.filter((element) => {
+    return element.favorito === estado;
+  }))
+ }
+
   return (
 
     <div className="App">
@@ -116,7 +122,10 @@ function App() {
         aoColaboradorCadastrado={colaborador => NovoColaborador(colaborador)} 
         Times={times}>
       </Formulario>
-
+      <div className='containerBotao'>
+        <button className='buttonFiltro' onClick={()=> filtrarCard(true)}>Filtrar favoritos</button>
+        <button className='buttonFiltro' onClick={()=> filtrarCard(false)}>Não favoritados</button>
+      </div>
       {times.map((time) => {return <Time 
             aoFavoritar={resolverFavorito}
             mudarCor={mudarCorDoTime}
