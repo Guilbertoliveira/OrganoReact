@@ -6,3 +6,17 @@
     max-width: 100%;
     max-height: 200px;
 }
+
+
+@media screen and (max-width: 480px) {
+    .banner {
+      background-image: none;
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .banner {
+      background-image: none;
+      background-color: #112;
+    }
+  }

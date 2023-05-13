@@ -11,6 +11,23 @@
 
 }
 
+@media screen and (max-width: 480px) {
+  .container {
+    background-image: none;
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    background-image: none;
+    background-color: #112;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+  }
+}
+
 .container .firstForm {
     background-color: #F6F6F6;
     opacity: 90%;
