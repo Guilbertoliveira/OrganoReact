@@ -100,6 +100,7 @@ function App() {
   function resolverFavorito(id) {
     setColaboradores(colaboradores.map((colaborador) => {
       if (colaborador.id === id) colaborador.favorito = !colaborador.favorito;
+      console.log(colaborador)
       return colaborador
     }))
   }
