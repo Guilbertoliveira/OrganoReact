@@ -12,7 +12,7 @@ interface CampoProps {
 }
 
 
-const Campo = (props: CampoProps) => {
+const Campo = ({ ...props }: CampoProps) => {
 
     // let valor = '';
 
