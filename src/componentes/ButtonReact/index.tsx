@@ -4,7 +4,7 @@ import './ButtonReact.css';
 import React from 'react'
 
 interface ButtonProps {
-    children: ReactElement
+    children: ReactElement | string
 }
 
 const ButtonReact = (props: ButtonProps) => {

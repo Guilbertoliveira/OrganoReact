@@ -4,24 +4,35 @@ import DropDown from "../DropDown";
 import ButtonReact from "../ButtonReact";
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
+import { Icolaborador } from "../../shared/interfaces/IColaborador";
 
 
-const Formulario = (props) => {
-  
+interface FormularioProps {
+    aoColaboradorCadastrado: (obj: Icolaborador) => void
+    cadastrarTime: ({ }) => void
+    Times: Time[]
+}
+
+type Time = {
+    nome: string
+}
+
+const Formulario = (props: FormularioProps) => {
+
     const [nome, setNome] = useState('');
     const [cargo, setCargo] = useState('');
     const [imagem, setImagem] = useState('');
-    const [time, setTime] = useState ('');
-    const [dificuldade, setDificuldade] = useState ('');
-    const [nomeTime, setNomeTime] = useState ('');
-    const [corTime, setCorTime] = useState ('');
+    const [time, setTime] = useState('');
+    const [dificuldade, setDificuldade] = useState('');
+    const [nomeTime, setNomeTime] = useState('');
+    const [corTime, setCorTime] = useState('');
 
 
-    function validaImagem(imagemvalidada){
+    function validaImagem(imagemvalidada: string) {
         var img = document.createElement('img');
         img.src = imagemvalidada;
-      
-        img.onerror = function() {
+
+        img.onerror = function () {
             let colaboradorcomerro = {
                 "nome": nome,
                 "cargo": cargo,
@@ -31,10 +42,10 @@ const Formulario = (props) => {
                 "id": uuidv4(),
                 "favorito": false
             }
-   
+
             props.aoColaboradorCadastrado(colaboradorcomerro);
         }
-        img.onload = function() {
+        img.onload = function () {
             let colaborador = {
                 "nome": nome,
                 "cargo": cargo,
@@ -44,27 +55,22 @@ const Formulario = (props) => {
                 "id": uuidv4(),
                 "favorito": false
             }
-   
+
             props.aoColaboradorCadastrado(colaborador);
-          }
-      
-      }
+        }
+
+    }
 
 
-    const aoSalvar = (eventClick) =>{
+    const aoSalvar = (eventClick: React.FormEvent<HTMLFormElement>) => {
         eventClick.preventDefault();
-        
         validaImagem(imagem)
-
-       
-
-    //    console.log('Form foi submetido =>', nome, cargo, imagem, time);   
-    
-         setNome(""); 
-         setImagem("");
-         setCargo("");
-         setTime("");
-         setDificuldade("");
+        //    console.log('Form foi submetido =>', nome, cargo, imagem, time);   
+        setNome("");
+        setImagem("");
+        setCargo("");
+        setTime("");
+        setDificuldade("");
     }
 
 
@@ -73,77 +79,77 @@ const Formulario = (props) => {
             <form onSubmit={aoSalvar} className="firstForm">
                 <h2>Preencha os dados para criar o card do Smite.</h2>
                 <Campo
-                    obrigatorio={true} 
-                    label="Nick" 
+                    obrigatorio={true}
+                    label="Nick"
                     placeholder="Digite seu nick"
                     valor={nome}
                     aoAlterado={valorNovo => setNome(valorNovo)}
                     type='text'
-                    >      
-                </Campo>
-                <Campo 
-                    obrigatorio={true} 
-                    label="Cargo" 
+                />
+
+                <Campo
+                    obrigatorio={true}
+                    label="Cargo"
                     placeholder="Digite seu cargo"
                     valor={cargo}
                     aoAlterado={valorNovo => setCargo(valorNovo)}
                     type='text'
-                    >
-                </Campo>
-                <Campo 
-                    obrigatorio={true} 
-                    label="Imagem" 
+                />
+
+                <Campo
+                    obrigatorio={true}
+                    label="Imagem"
                     placeholder="Digite o endereço da imagem"
                     valor={imagem}
                     aoAlterado={valorNovo => setImagem(valorNovo)}
                     type='text'
-                    >
-                </Campo>
-                <DropDown 
-                    label="Lane" 
-                    itens={props.Times.map((time)=> time.nome)}
+                />
+
+                <DropDown
+                    label="Lane"
+                    itens={props.Times.map((time) => time.nome)}
                     valor={time}
-                    aoAlterado={valorNovo => setTime(valorNovo)}>
-                </DropDown>
+                    aoAlterado={valorNovo => setTime(valorNovo)} />
+
                 <Campo //campo criado como teste para aprender :D 
                     label="Dificuldade"
                     valor={dificuldade}
                     obrigatorio={true}
-                    aoAlterado= {valorNovo => setDificuldade(valorNovo)}
+                    aoAlterado={valorNovo => setDificuldade(valorNovo)}
                     placeholder={'Dificuldade do personagem'}
                     type='text'
 
                 ></Campo>
-                
-                    
+
+
                 <ButtonReact>Criar Card</ButtonReact>
             </form>
-            <form className="secondForm" onSubmit={(evento)=> {
+            <form className="secondForm" onSubmit={(evento) => {
                 evento.preventDefault();
-                props.cadastrarTime({nome: nomeTime, cor: corTime});
-                setCorTime("") 
+                props.cadastrarTime({ nome: nomeTime, cor: corTime });
+                setCorTime("")
                 setNomeTime("")
 
             }}>
                 <h2>Preencha os dados para criar novo time.</h2>
                 <Campo
                     obrigatorio
-                    label="Nick" 
+                    label="Nick"
                     placeholder="Digite nome do time"
                     valor={nomeTime}
                     aoAlterado={valorNovo => setNomeTime(valorNovo)}
                     type='text'
-                >      
-                </Campo>
-                <Campo 
+                />
+
+                <Campo
                     obrigatorio
                     type='color'
-                    label="Cor" 
+                    label="Cor"
                     placeholder="Digite a cor do time"
                     valor={corTime}
                     aoAlterado={valorNovo => setCorTime(valorNovo)}
-                >
-                </Campo>                        
+                />
+
                 <ButtonReact>Criar novo time</ButtonReact>
             </form>
         </section>
