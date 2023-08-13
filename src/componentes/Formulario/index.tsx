@@ -9,13 +9,16 @@ import { Icolaborador } from "../../shared/interfaces/IColaborador";
 
 interface FormularioProps {
     aoColaboradorCadastrado: (obj: Icolaborador) => void
-    cadastrarTime: ({ }) => void
+    cadastrarTime: ({ }: Time) => void
     Times: Time[]
 }
 
 type Time = {
-    nome: string
-}
+    id?: string;
+    nome: string;
+    corPrimaria: string;
+    corSecundaria: string;
+};
 
 const Formulario = (props: FormularioProps) => {
 
@@ -126,7 +129,7 @@ const Formulario = (props: FormularioProps) => {
             </form>
             <form className="secondForm" onSubmit={(evento) => {
                 evento.preventDefault();
-                props.cadastrarTime({ nome: nomeTime, cor: corTime });
+                props.cadastrarTime({ nome: nomeTime, corPrimaria: corTime, corSecundaria: corTime });
                 setCorTime("")
                 setNomeTime("")
 

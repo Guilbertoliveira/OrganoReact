@@ -4,6 +4,10 @@ import Formulario from './componentes/Formulario';//maneira importada com index
 import Time from './componentes/Time';
 import { v4 as uuidv4 } from 'uuid';
 import chalk from 'chalk';
+import { Icolaborador } from './shared/interfaces/IColaborador';
+
+
+
 
 function App() {
 
@@ -47,8 +51,7 @@ function App() {
     }
   ])
 
-
-  function validaNome(colaborador, colaboradores) {
+  function validaNome(colaborador: Icolaborador, colaboradores: Icolaborador[]) {
     if (colaboradores.filter((nick) => nick.nome === colaborador.nome).length > 0) {
       return false;
     }
@@ -57,12 +60,8 @@ function App() {
     }
   }
 
-
-
-
-
-  const [colaboradores, setColaboradores] = useState([]);
-  const NovoColaborador = (colaborador) => {
+  const [colaboradores, setColaboradores] = useState<Icolaborador[]>([]);
+  const NovoColaborador = (colaborador: Icolaborador) => {
 
     if (validaNome(colaborador, colaboradores)) {
       //testei o push e deu certo colaboradores.push(colaborador)
@@ -78,12 +77,19 @@ function App() {
 
   }
 
-  function deletarColaborador(id) {
+  function deletarColaborador(id: string) {
     setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id));
     console.log(chalk.green('Deletado o card'));
   }
 
-  function mudarCorDoTime(cor, id, campo) {
+
+  type MudarCorDoTimeParams = {
+    cor: string;
+    id: string;
+    campo: string;
+  };
+
+  function mudarCorDoTime({ cor, id, campo }: MudarCorDoTimeParams) {
 
     setTimes(times.map(time => {
       if (time.id === id) {
@@ -93,11 +99,19 @@ function App() {
     }))
   }
 
-  function cadastrarTime(novoTime) {
-    setTimes([...times, { ...novoTime, id: uuidv4 }]);
+
+  type Time = {
+    id?: string;
+    nome: string;
+    corPrimaria: string;
+    corSecundaria: string;
+  };
+
+  function cadastrarTime(novoTime: Time) {
+    setTimes([...times, { ...novoTime, id: uuidv4() }]);
   }
 
-  function resolverFavorito(id) {
+  function resolverFavorito(id: string) {
     setColaboradores(colaboradores.map((colaborador) => {
       if (colaborador.id === id) colaborador.favorito = !colaborador.favorito;
       console.log(colaborador)
@@ -106,7 +120,7 @@ function App() {
   }
 
 
-  function filtrarCard(estado) {
+  function filtrarCard(estado: boolean) {
     setColaboradores(colaboradores.filter((element) => {
       return element.favorito === estado;
     }))
@@ -119,8 +133,7 @@ function App() {
       <Formulario
         cadastrarTime={cadastrarTime}
         aoColaboradorCadastrado={colaborador => NovoColaborador(colaborador)}
-        Times={times}>
-      </Formulario>
+        Times={times} />
       <div className='containerBotao'>
         <button className='buttonFiltro' onClick={() => filtrarCard(true)}>Filtrar favoritos</button>
         <button className='buttonFiltro' onClick={() => filtrarCard(false)}>Não favoritados</button>
@@ -136,9 +149,7 @@ function App() {
           colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
           aoDeletar={deletarColaborador}
           time={time}
-        >
-
-        </Time>
+        />
       })}
 
     </div>
