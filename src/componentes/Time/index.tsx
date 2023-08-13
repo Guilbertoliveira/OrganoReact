@@ -9,7 +9,7 @@ interface TimeProps {
     corPrimaria: string
     colaboradores: Icolaborador[]
     aoDeletar: (id: string) => void
-    aoFavoritar: (id: string) => {}
+    aoFavoritar: (id: string) => void
     time: any
     mudarCor: any
 }

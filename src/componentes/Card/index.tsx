@@ -8,7 +8,7 @@ interface ColaboradorProps {
     colaborador: Icolaborador
     corPrimaria: string
     aoDeletar: (id: string) => void
-    aoFavoritar: (id: string) => {}
+    aoFavoritar: (id: string) => void
 }
 
 const Card = ({ colaborador, corPrimaria, aoDeletar, aoFavoritar }: ColaboradorProps) => {
