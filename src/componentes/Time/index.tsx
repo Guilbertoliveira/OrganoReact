@@ -1,7 +1,7 @@
 import { Icolaborador } from '../../shared/interfaces/IColaborador';
 import Card from '../Card';
 import './Time.css';
-
+import { MudarCorDoTimeParams } from '../../shared/types/TMudarCor';
 
 interface TimeProps {
     nome: string
@@ -11,7 +11,7 @@ interface TimeProps {
     aoDeletar: (id: string) => void
     aoFavoritar: (id: string) => void
     time: any
-    mudarCor: any
+    mudarCor: ({ cor, id, campo }: MudarCorDoTimeParams) => void
 }
 
 export default function Time({ ...props }: TimeProps) {
@@ -21,8 +21,8 @@ export default function Time({ ...props }: TimeProps) {
 
     return (
         props.colaboradores.length > 0 && <section className='time' style={estiliza} >
-            <input value={props.corPrimaria} type='color' className='input-cor' onChange={(evento) => props.mudarCor(evento.target.value, props.time.id, "corPrimaria")}></input>
-            <input value={props.corSecundaria} type='color' className='input-cor2' onChange={(evento) => props.mudarCor(evento.target.value, props.time.id, "corSecundaria")}></input>
+            <input value={props.corPrimaria} type='color' className='input-cor' onChange={(evento) => props.mudarCor({ cor: evento.target.value, id: props.time.id, campo: "corPrimaria" })}></input>
+            <input value={props.corSecundaria} type='color' className='input-cor2' onChange={(evento) => props.mudarCor({ cor: evento.target.value, id: props.time.id, campo: "corSecundaria" })}></input>
             <div>
                 <h3 style={{ borderColor: props.corPrimaria, color: props.corPrimaria }}>{props.nome}</h3>
                 <div className='cards'>

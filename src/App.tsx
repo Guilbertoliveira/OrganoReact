@@ -5,7 +5,7 @@ import Time from './componentes/Time';
 import { v4 as uuidv4 } from 'uuid';
 import chalk from 'chalk';
 import { Icolaborador } from './shared/interfaces/IColaborador';
-
+import { MudarCorDoTimeParams } from './shared/types/TMudarCor';
 
 
 
@@ -83,11 +83,6 @@ function App() {
   }
 
 
-  type MudarCorDoTimeParams = {
-    cor: string;
-    id: string;
-    campo: string;
-  };
 
   function mudarCorDoTime({ cor, id, campo }: MudarCorDoTimeParams) {
 

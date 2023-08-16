@@ -35,6 +35,7 @@ const Card = ({ colaborador, corPrimaria, aoDeletar, aoFavoritar }: ColaboradorP
                         ? <AiFillStar style={{ fontSize: 26, color: 'yellow' }} onClick={() => aoFavoritar(colaborador.id)}></AiFillStar>
                         : <AiOutlineStar style={{ fontSize: 26, color: 'yellow' }} onClick={() => aoFavoritar(colaborador.id)}></AiOutlineStar>}
                 </div>
+                <h6>{new Date((colaborador.data)).toLocaleDateString()}</h6>
             </div>
         </div>
 
