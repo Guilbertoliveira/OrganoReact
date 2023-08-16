@@ -1,4 +1,4 @@
-.Lista-suspensa select{
+.Lista-suspensa select {
     width: 100%;
     border: none;
     height: 50px;
@@ -11,7 +11,7 @@
 }
 
 .Lista-suspensa label {
-    color: #212121;
+    color: white;
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;

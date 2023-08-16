@@ -5,6 +5,7 @@ import ButtonReact from "../ButtonReact";
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { Icolaborador } from "../../shared/interfaces/IColaborador";
+import { useEffect } from 'react'
 
 
 interface FormularioProps {
@@ -29,6 +30,7 @@ const Formulario = (props: FormularioProps) => {
     const [dificuldade, setDificuldade] = useState('');
     const [nomeTime, setNomeTime] = useState('');
     const [corTime, setCorTime] = useState('');
+    const [data, setData] = useState('');
 
 
     function validaImagem(imagemvalidada: string) {
@@ -43,10 +45,12 @@ const Formulario = (props: FormularioProps) => {
                 "time": time,
                 "dificuldade": dificuldade,
                 "id": uuidv4(),
-                "favorito": false
+                "favorito": false,
+                "data": data
             }
 
             props.aoColaboradorCadastrado(colaboradorcomerro);
+            console.log(colaboradorcomerro)
         }
         img.onload = function () {
             let colaborador = {
@@ -56,7 +60,8 @@ const Formulario = (props: FormularioProps) => {
                 "time": time,
                 "dificuldade": dificuldade,
                 "id": uuidv4(),
-                "favorito": false
+                "favorito": false,
+                "data": data
             }
 
             props.aoColaboradorCadastrado(colaborador);
@@ -74,8 +79,16 @@ const Formulario = (props: FormularioProps) => {
         setCargo("");
         setTime("");
         setDificuldade("");
+        setData("")
     }
 
+    useEffect(() => {
+        const currentDate = new Date();
+        const diaAnterior = new Date(currentDate);
+        diaAnterior.setDate(currentDate.getDate() - 1);
+        const formattedDate = diaAnterior.toISOString().split('T')[0];
+        setData(formattedDate);
+    }, []);
 
     return (
         <section className="container">
@@ -121,8 +134,14 @@ const Formulario = (props: FormularioProps) => {
                     aoAlterado={valorNovo => setDificuldade(valorNovo)}
                     placeholder={'Dificuldade do personagem'}
                     type='text'
-
-                ></Campo>
+                />
+                <Campo
+                    label="Data entrada no time"
+                    valor={data}
+                    obrigatorio={true}
+                    aoAlterado={valorNovo => setData(valorNovo)}
+                    placeholder={''}
+                    type='date' />
 
 
                 <ButtonReact>Criar Card</ButtonReact>

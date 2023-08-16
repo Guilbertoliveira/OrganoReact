@@ -5,5 +5,6 @@ export interface Icolaborador {
     id: string,
     dificuldade: string,
     favorito: boolean,
-    time?: string
+    time?: string,
+    data: string
 }

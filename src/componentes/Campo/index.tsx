@@ -6,9 +6,9 @@ interface CampoProps {
     aoAlterado: (value: string) => void;
     placeholder: string;
     label: string;
-    type: string;
+    type?: 'text' | 'date' | 'password' | 'email' | 'color';
     valor: string;
-    obrigatorio: boolean;
+    obrigatorio?: boolean;
 }
 
 
