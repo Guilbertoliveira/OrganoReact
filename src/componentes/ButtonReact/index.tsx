@@ -1,7 +1,6 @@
 import { ReactElement } from 'react';
 import './ButtonReact.css';
 
-import React from 'react'
 
 interface ButtonProps {
     children: ReactElement | string
